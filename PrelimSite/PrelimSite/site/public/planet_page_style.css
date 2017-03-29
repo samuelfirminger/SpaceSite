@@ -1,0 +1,59 @@
+html {
+    overflow: hidden;
+    background-image: url("images/backgrounds/night_sky.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+
+}
+
+#infocard {
+    background-color: red;
+}
+
+#planetStats {
+    background-color: green;  
+}
+
+ul,li {
+    background-color: green;
+}
+
+#planetImage {
+    float: left;
+    max-width:100%;
+    height:auto;
+    min-width: 400px;
+}
+
+
+#planetStatsHolder{
+    white-space: nowrap;
+    
+}
+
+table {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    
+    min-width:60%;
+    max-width: 60%;
+    color: white;
+    font-family: Courier New;
+    font-size: 1.5em;  
+ 
+}
+
+tr,td {
+    border: 1px solid white;    
+}
