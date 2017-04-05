@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  	<title>Planets</title>	
+  	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+  	<!--add customised css file here--> 
+  	<link type="text/css" rel="stylesheet" href="css/index_style.css"/> 
+</head> 
+
+
+<body>
+
+
+<!--add role"navigation" for accessibility--> 
+<nav class="navbar navbar-default" role="navigation"> 
+	<div class="container-fluid">
+
+    <!-- for collapsible button when screen is small-->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-SS-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a class="navbar-brand" href="#">SolarSys</a>
+	</div>
+
+    <!-- entire nav bar at top--> 
+	<div class="collapse navbar-collapse" id="bs-SS-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+
+			<li><a href="index.html">Home</a></li>
+
+            <!--drop down button for planets, maybe change at later and use gifs instead-->
+			<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planet Navigation <span class="caret"></span></a>
+          		<ul class="dropdown-menu">
+            	<li><a href="#">Mercury</a></li>
+            	<li><a href="#">Venus</a></li>
+            	<li><a href="#">Earth</a></li>
+            	<li><a href="mars.html">Mars</a></li>
+            	<li><a href="#">Jupiter</a></li>
+            	<li><a href="#">Saturn</a></li>
+            	<li><a href="#">Uranus</a></li>
+            	<li><a href="#">Neptune</a></li>
+            	<li role="separator" class="divider"></li>
+            	<li><a href="#">Planet Index</a></li>
+          	</ul>
+        	</li>
+
+            <!--login fields-->
+			<form class="navbar-form navbar-left" role="form">
+				<div class="input-group"> 
+					<span class="input-group-addon"> 
+					<span class="glyphicon glyphicon-user"></span>
+					</span>
+					<input type="text" class="form-control input-sm" placeholder="Username"/>
+				</div>
+
+				<div class="input-group"> 
+					<span class="input-group-addon"> 
+					<span class="glyphicon glyphicon-lock"></span>
+					</span>
+					<input type="password" class="form-control input-sm" placeholder="password"/>
+					</div>
+					<a href="#" class="btn btn-success btn-sm" role="button">Login</a>
+					<a href="#" class="btn btn-primary btn-sm" role="button">Signup</a>
+
+				</form> 
+		</ul>
+	</div>
+	</div>
+</nav> 
+
+
+<div class="container-fluid" id="myContainer">
+
+        <!--Page header-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Saturn
+                    <small>Cassini Probe</small>
+                </h1>
+            </div>
+        </div>
+
+        <!--information on planet--> 
+        <div class="row">
+            <!-- embedded video about last mission from Cassini-->
+            <div class="col-md-8">
+                <div class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xrGAQCq9BMU?ecver=2"></iframe>
+                </div>
+        	</div>
+            
+
+            <div class="col-md-4">
+                <h3>Saturn</h3>
+                <p>Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. Although it has only one-eighth the average density of Earth, with its larger volume Saturn is just over 95 times more massive. Saturn is named after the Roman god of agriculture; its astronomical symbol (♄) represents the god's sickle.</p>
+                <h3>Saturn Statistics</h3>
+                <ul>
+                    <li>Aphelion	10.086 AU</li>
+                    <li>Orbital period	10,759.22 d</li>
+                    <li>Mass	95.159 Earths</li>
+                </ul>
+            </div>
+
+		</div>
+
+</div>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,82 @@
+body{
+	margin: 0px;
+	width: 100%;
+	padding: 0px;
+}
+
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+#myContainer{
+	background-image: url("../images/backgrounds/night_sky.jpg");
+	background-size: cover;
+	background-position: center ;
+	background-attachment: fixed; 
+	background-repeat: no-repeat;
+	min-height: 640px;
+	
+	margin: 0px;
+}
+
+h1 {
+	text-align: center ; 
+	color: white ; 
+	font-weight: bold; 
+	font-size: 50px;
+
+}
+
+#myContainer {
+	font-size: 20px;
+	color: white;
+	background-color: black ; 
+}
+
+#myContainer-overlay {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.1);
+	top; 0; 
+	bottom: 0; 
+	height: 100%; 
+	width: 100%; 
+	z-index: -5; 
+}
+
+
+.container {
+	margin-top: 100px;
+}
+
+
+.container p { 
+  display: table;
+  margin:0 auto;
+  display: inline-block; 
+  zoom: 1; 
+  *display: inline; 
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+	.input-group {
+		margin-bottom: 5px;
+	}
+}
+
+.brand {
+	max-height: 25px; 
+}
