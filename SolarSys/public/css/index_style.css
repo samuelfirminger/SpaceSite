@@ -2,23 +2,19 @@ body{
 	margin: 0px;
 	width: 100%;
 	padding: 0px;
-}
 
+	background-image: url("../images/backgrounds/night_sky.jpg");
+	background-size: 100% 100%;
+	background-position: center ;
+	background-attachment: fixed; 
+	background-repeat: no-repeat;
+	min-height: 640px;
+}
 
 .navbar {
 	margin-bottom: 0px;
 }
 
-#myContainer{
-	background-image: url("../images/backgrounds/night_sky.jpg");
-	background-size: cover;
-	background-position: center ;
-	background-attachment: fixed; 
-	background-repeat: no-repeat;
-	min-height: 640px;
-	
-	margin: 0px;
-}
 
 h1 {
 	text-align: center ; 
@@ -29,23 +25,9 @@ h1 {
 }
 
 #myContainer {
+	margin: 0px;
 	font-size: 20px;
 	color: white;
-	background-color: black ; 
-}
-
-#myContainer-overlay {
-	position: absolute;
-	background-color: rgba(0, 0, 0, 0.1);
-	top; 0; 
-	bottom: 0; 
-	height: 100%; 
-	width: 100%; 
-	z-index: -5; 
-}
-
-
-.container {
 	margin-top: 100px;
 }
 

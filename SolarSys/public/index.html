@@ -1,64 +1,112 @@
-body{
-	margin: 0px;
-	width: 100%;
-	padding: 0px;
+<!DOCTYPE html> 
 
-	background-image: url("../images/backgrounds/night_sky.jpg");
-	background-size: 100% 100%;
-	background-position: center ;
-	background-attachment: fixed; 
-	background-repeat: no-repeat;
-	min-height: 640px;
-}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  	<title>SolarSys</title>	
+  	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+  	<!--add customised css file here--> 
+  	<link type="text/css" rel="stylesheet" href="css/index_style.css"/> 
+</head> 
 
-.navbar {
-	margin-bottom: 0px;
-}
+<body>
+
+<!--add role"navigation" for accessibility--> 
+<nav class="navbar navbar-default" role="navigation"> 
+	<div class="container-fluid">
+
+    <!-- for collapsible button when screen is small-->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-SS-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a class="navbar-brand" href="#">SolarSys</a>
+	</div>
+
+    <!-- entire nav bar at top--> 
+	<div class="collapse navbar-collapse" id="bs-SS-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+
+			<li><a href="index.html">Home</a></li>
+
+            <!--drop down button for planets, maybe change at later and use gifs instead-->
+			<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planet Navigation <span class="caret"></span></a>
+          		<ul class="dropdown-menu">
+            	<li><a href="planets.html">Mercury</a></li>
+            	<li><a href="#">Venus</a></li>
+            	<li><a href="#">Earth</a></li>
+            	<li><a href="mars.html">Mars</a></li>
+            	<li><a href="#">Jupiter</a></li>
+            	<li><a href="saturn.html">Saturn</a></li>
+            	<li><a href="#">Uranus</a></li>
+            	<li><a href="#">Neptune</a></li>
+            	<li role="separator" class="divider"></li>
+            	<li><a href="planetindex.html">Planet Index</a></li>
+          	</ul>
+        	</li>
+
+            <!--login fields-->
+			<form class="navbar-form navbar-left" role="form">
+				<div class="input-group"> 
+					<span class="input-group-addon"> 
+					<span class="glyphicon glyphicon-user"></span>
+					</span>
+					<input type="text" class="form-control input-sm" placeholder="Username"/>
+				</div>
+
+				<div class="input-group"> 
+					<span class="input-group-addon"> 
+					<span class="glyphicon glyphicon-lock"></span>
+					</span>
+					<input type="password" class="form-control input-sm" placeholder="password"/>
+					</div>
+					<a href="#" class="btn btn-success btn-sm" role="button">Login</a>
+					<a href="#" class="btn btn-primary btn-sm" role="button">Signup</a>
+
+				</form> 
+		</ul>
+	</div>
+	</div>
+</nav> 
+
+<!-- did contain stuff previously but here to add-->
+<div class="container-fluid" id="myContainer">
+    <h1 class="display-1">Welcome to SolarSys</h1>
+
+    <div class="row"> 
+    <div class="col-md-1 col-xs-1"></div>
+    <p class="text col-md-4 col-xs-12">
+    The Solar System is the gravitationally bound system comprising the Sun and the objects that orbit it, either directly or indirectly. Of those objects that orbit the Sun directly, the largest eight are the planets, with the remainder being significantly smaller objects, such as dwarf planets and small Solar System bodies. Of the objects that orbit the Sun indirectly, the moons, two are larger than the smallest planet, Mercury.
+    </p>
+
+    <div class="col-md-1 col-xs-1"></div>
+    <p class="text col-md-4 col-xs-12">
+    The Solar System formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority of the system's mass is in the Sun, with most of the remaining mass contained in Jupiter. The four smaller inner planets, Mercury, Venus, Earth and Mars, are terrestrial planets, being primarily composed of rock and metal. The four outer planets are giant planets, being substantially more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the two outermost planets, Uranus and Neptune, are ice giants, being composed mostly of substances with relatively high melting points compared with hydrogen and helium, called volatiles, such as water, ammonia and methane. All planets have almost circular orbits that lie within a nearly flat disc called the ecliptic.
+    </p>
+    </div>
 
 
-h1 {
-	text-align: center ; 
-	color: white ; 
-	font-weight: bold; 
-	font-size: 50px;
+	<footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright SolarSys 2017</p>
+            </div>
+        </div>
+    </footer>
 
-}
-
-#myContainer {
-	margin: 0px;
-	font-size: 20px;
-	color: white;
-	margin-top: 100px;
-}
+</div>
 
 
-.container p { 
-  display: table;
-  margin:0 auto;
-  display: inline-block; 
-  zoom: 1; 
-  *display: inline; 
-}
+<!-- add javascript to bottom of the page so it loads faster-->
+<!--bootstrap uses jquery so need to load jquery script first--> 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
 
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-	.input-group {
-		margin-bottom: 5px;
-	}
-}
-
-.brand {
-	max-height: 25px; 
-}
+</body>
+</html>
