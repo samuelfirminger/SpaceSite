@@ -62,3 +62,10 @@ h1 {
 .brand {
 	max-height: 25px; 
 }
+
+
+	.top-buffer {
+		margin-top: 10px;
+	}
+
+
