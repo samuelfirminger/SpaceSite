@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300mm"
+   height="300mm"
+   viewBox="0 0 300 300"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="mercury.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1340"
+       id="linearGradient1342"
+       x1="103.70058"
+       y1="51.112038"
+       x2="64.144684"
+       y2="81.580765"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.19655378,0,0,0.19986467,23.360034,37.184288)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1340">
+      <stop
+         style="stop-color:#ac9d93;stop-opacity:1;"
+         offset="0"
+         id="stop1336" />
+      <stop
+         style="stop-color:#333333;stop-opacity:1"
+         offset="1"
+         id="stop1338" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Noise Fill"
+       id="filter4690">
+      <feTurbulence
+         type="turbulence"
+         baseFrequency="0.33855 0.31251"
+         numOctaves="4"
+         seed="177"
+         result="turbulence"
+         id="feTurbulence4674" />
+      <feComposite
+         in="SourceGraphic"
+         in2="turbulence"
+         operator="out"
+         result="composite1"
+         id="feComposite4676" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2.79 -0.91 "
+         result="color"
+         id="feColorMatrix4678" />
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(61,55,64)"
+         result="flood"
+         id="feFlood4680" />
+      <feMerge
+         result="merge"
+         id="feMerge4686">
+        <feMergeNode
+           in="flood"
+           id="feMergeNode4682" />
+        <feMergeNode
+           in="color"
+           id="feMergeNode4684" />
+      </feMerge>
+      <feComposite
+         in2="SourceGraphic"
+         operator="in"
+         result="composite2"
+         id="feComposite4688" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-35.269135"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1360"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,3)">
+    <ellipse
+       style="fill:url(#linearGradient1342);fill-opacity:1;stroke:#756f63;stroke-width:0.08812114;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4690)"
+       id="path1326"
+       cx="40.065475"
+       cy="49.803581"
+       rx="4.2836537"
+       ry="4.1955576"
+       transform="matrix(32.177027,0,0,32.177027,-1137.9974,-1456.9937)" />
+  </g>
+</svg>
