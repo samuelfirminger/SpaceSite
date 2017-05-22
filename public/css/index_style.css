@@ -40,6 +40,15 @@ body {
     color: #1abc9c !important;
 }
 
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px;
+  width: auto;
+}
+
 /*this is the background for the title*/
 .bg-1 { 
     background-image: url("../images/sunrise.jpg");
@@ -119,6 +128,10 @@ make the background black. It looks funny on mobile if the sun is there*/
 .btn {
     background-color: #070915;
     color:#ffffff;
+}
+
+#downScroll {
+  margin-top: 30px ; 
 }
 
 
