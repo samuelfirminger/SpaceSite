@@ -55,7 +55,7 @@ obj.push(t);
 
 	var t			= {};
 		t.angle	    = Math.random()*Math.PI*2; //start angle
-		t.radius    = 115;
+		t.radius    = 95;
 		t.x 		= Math.cos(t.angle)*t.radius; // start position x
 		t.y 		= Math.sin(t.angle)*t.radius; //start position y
 		t.duration	= 10000; //10 seconds per rotation
@@ -127,7 +127,7 @@ function draw(){
 		ctx.stroke();
         
         ctx.beginPath();
-		ctx.arc(obj[i].x,obj[i].y,10,0,Math.PI*2);  
+		ctx.arc(obj[i].x,obj[i].y,12,0,Math.PI*2);  
 		ctx.lineWidth = 1.5;
 		switch(i) {
 			case 0: 
