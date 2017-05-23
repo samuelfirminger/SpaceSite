@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="400mm"
-   height="80mm"
-   viewBox="0 0 400 80"
+   height="90mm"
+   viewBox="0 0 400 90"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
@@ -52,22 +52,17 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-217)">
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479"
-       d="m 77.248472,226.57521 a 25.656095,25.656095 0 0 0 -10.345122,2.21207 15.990388,15.990388 0 0 1 2.602007,2.25489 22.194795,22.194795 0 0 1 7.865361,-1.49508 22.194795,22.194795 0 0 1 8.039365,1.53167 10.442703,10.442703 0 0 1 1.135477,-2.75995 25.656095,25.656095 0 0 0 -9.297088,-1.7436 z m 23.733948,15.94711 a 10.442703,10.442703 0 0 1 -2.909856,1.22472 22.194795,22.194795 0 0 1 1.49285,7.99474 22.194795,22.194795 0 0 1 -2.456559,10.10152 17.869788,18.9568 0 0 1 2.424439,3.03612 25.656095,25.656095 0 0 0 3.371186,-12.6482 25.656095,25.656095 0 0 0 -1.92206,-9.7089 z m -48.902305,14.33112 a 25.656095,25.656095 0 0 0 14.819219,18.81949 17.869788,18.9568 0 0 1 -0.0049,-0.15392 17.869788,18.9568 0 0 1 0.416714,-4.01857 22.194795,22.194795 0 0 1 -11.240119,-13.66321 15.990388,15.990388 0 0 1 -3.990905,-0.98379 z"
-       id="path4485"
-       inkscape:connector-curvature="0" />
+     transform="translate(0,-207)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.26458332;stroke-opacity:0.96190479"
-       x="5.7993441"
-       y="271.65607"
+       x="2.0575707"
+       y="271.13226"
        id="text4589"><tspan
          sodipodi:role="line"
          id="tspan4587"
-         x="5.7993441"
-         y="271.65607"
+         x="2.0575707"
+         y="271.13226"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.79999924px;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.26458332;stroke-opacity:0.96190479">S</tspan></text>
     <text
        xml:space="preserve"
@@ -80,23 +75,63 @@
          x="112.85833"
          y="270.87326"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.79999924px;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.26458332;stroke-opacity:0.96190479">L A R N E T</tspan></text>
-    <circle
-       style="fill:none;fill-opacity:0.96984923;stroke:#ffffff;stroke-width:3.53019357;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479"
-       id="path4771"
-       cx="84.427635"
-       cy="274.09555"
-       r="14.159778" />
-    <circle
-       style="fill:none;fill-opacity:0.96984923;stroke:#ffffff;stroke-width:3.10814309;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479"
-       id="path4771-5"
-       cx="94.707169"
-       cy="234.44589"
-       r="7.0507631" />
-    <circle
-       style="fill:none;fill-opacity:0.96984923;stroke:#ffffff;stroke-width:3.16848803;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479"
-       id="path4771-8"
-       cx="57.015537"
-       cy="241.78842"
-       r="12.708959" />
+    <g
+       id="g4810">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4485"
+         d="m 77.248472,226.57521 a 25.656095,25.656095 0 0 0 -10.345122,2.21207 15.990388,15.990388 0 0 1 2.602007,2.25489 22.194795,22.194795 0 0 1 7.865361,-1.49508 22.194795,22.194795 0 0 1 8.039365,1.53167 10.442703,10.442703 0 0 1 1.135477,-2.75995 25.656095,25.656095 0 0 0 -9.297088,-1.7436 z m 23.733948,15.94711 a 10.442703,10.442703 0 0 1 -2.909856,1.22472 22.194795,22.194795 0 0 1 1.49285,7.99474 22.194795,22.194795 0 0 1 -2.456559,10.10152 17.869788,18.9568 0 0 1 2.424439,3.03612 25.656095,25.656095 0 0 0 3.371186,-12.6482 25.656095,25.656095 0 0 0 -1.92206,-9.7089 z m -48.902305,14.33112 a 25.656095,25.656095 0 0 0 14.819219,18.81949 17.869788,18.9568 0 0 1 -0.0049,-0.15392 17.869788,18.9568 0 0 1 0.416714,-4.01857 22.194795,22.194795 0 0 1 -11.240119,-13.66321 15.990388,15.990388 0 0 1 -3.990905,-0.98379 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479" >
+                                           <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 75 253"
+          to="360 75 253"
+          dur="20s"
+          repeatCount="indefinite"/>
+        </path>
+      <circle
+         r="14.159778"
+         cy="274.09555"
+         cx="84.427635"
+         id="path4771"
+         style="fill:none;fill-opacity:0.96984923;stroke:#ffffff;stroke-width:3.53019357;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479" >
+                                           <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 75 253"
+          to="360 75 253"
+          dur="20s"
+          repeatCount="indefinite"/>
+        </circle>
+      <circle
+         r="7.0507631"
+         cy="234.44589"
+         cx="94.707169"
+         id="path4771-5"
+         style="fill:none;fill-opacity:0.96984923;stroke:#ffffff;stroke-width:3.10814309;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479" >
+                                           <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 75 253"
+          to="360 75 253"
+          dur="20s"
+          repeatCount="indefinite"/>
+        </circle>
+      <circle
+         r="12.708959"
+         cy="241.78842"
+         cx="57.015537"
+         id="path4771-8"
+         style="fill:none;fill-opacity:0.96984923;stroke:#ffffff;stroke-width:3.16848803;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.96190479" >
+                                           <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 75 253"
+          to="360 75 253"
+          dur="20s"
+          repeatCount="indefinite"/>
+        </circle>
+    </g>
   </g>
 </svg>
