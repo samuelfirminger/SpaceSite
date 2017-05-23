@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  	<title>SolarNet</title>	
+  	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+  	<!--add customised css file here--> 
+  	<link type="text/css" rel="stylesheet" href="css/animate.css"/> 
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+</head> 
+
+<body id="top-page" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- nav bar at the top of the page -->
+<div id="navMenu"></div>
+
+<div class="container-fluid bg-1">
+	<div class="row">
+		<div class="col-md-5 col-md-offset-1">
+			<canvas class="img-responsive" id="background" width="500" height="500"></canvas>
+		</div>
+
+		<div class="col-md-5" id="animateCaption">
+			<h1>SOLAR SYSTEM SIMULATION</h1>
+
+			<p>This simulation shows the orbital periods between each planet. A year is defined as 
+			the length of time a planet takes to complete one full rotation around the sun. Here, 
+			it is easy to see that as distance from the sun increases, so does the orbital period.
+			The orbital period for each planet is as follows: </p>
+
+			<u1 id="orbital"> 
+				<li>Mercury: 87.97 days (0.2 years) </li>
+				<li>Venus : 224.70 days (0.6 years)</li>
+				<li>Earth: 365.26 days(1 year)</li>
+				<li>Mars: 686.98 days(1.9 years)</li>
+				<li>Jupiter: 4,332.82 days (11.9 years)</li>
+				<li>Saturn: 10,755.70 days (29.5 years)</li>
+				<li>Uranus: 30,687.15 days (84 years)</li>
+				<li>Neptune: 60,190.03 days (164.8 years)</li>
+			</u1>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- add javascript to bottom of the page so it loads faster-->
+<!--bootstrap uses jquery so need to load jquery script first--> 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
+
+<!-- the scroll function/scripts was obtained from here 
+https://startbootstrap.com/template-overviews/scrolling-nav/ -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+<!-- this is loading the navbar from the script file -->
+<script src="../js/navbar.js"></script>
+<script src="../js/animator.js"></script>
+
+</body>
+</html>
