@@ -32,6 +32,11 @@ body {
  
 }
 
+.navbar .navbar-brand {
+  padding-top: 15px;
+  margin-left: 1px !important;
+}
+
 .nav.navbar-nav li a {
    color: #ffffff;
  }

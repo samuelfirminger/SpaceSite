@@ -14,42 +14,8 @@
 <body id="top-page" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <!-- nav bar at the top of the page -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand page-scroll" href="#top-page">SolarNet</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-              <a href="#" class="dropdown-toggle" id="help" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planet Navigation <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <li><a href="#">Mercury</a></li>
-              <li><a href="#">Venus</a></li>
-              <li><a href="#">Earth</a></li>
-              <li><a href="mars.html">Mars</a></li>
-              <li><a href="#">Jupiter</a></li>
-              <li><a href="saturn.html">Saturn</a></li>
-              <li><a href="#">Uranus</a></li>
-              <li><a href="#">Neptune</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Planet Index</a></li>
-            </ul>
-          </li>
-          
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="index.html">WHAT</a></li>
-        <li><a href="index.html">WHERE</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<nav id="navMenu"></nav>
+<script src="../js/navbar.js"></script>
 
 
 
@@ -91,14 +57,14 @@
 
 The rotational period and seasonal cycles of Mars are likewise similar to those of Earth, as is the tilt that produces the seasons. Mars is the site of Olympus Mons, the largest volcano and second-highest known mountain in the Solar System, and of Valles Marineris, one of the largest canyons in the Solar System. The smooth Borealis basin in the northern hemisphere covers 40% of the planet and may be a giant impact feature. Mars has two moons, Phobos and Deimos, which are small and irregularly shaped. These may be captured asteroids, similar to 5261 Eureka, a Mars trojan.</p>
 
-		<a class="btn btn-primary page-scroll" href="#marsInfo">Scroll down to Planets</a>
+		<a class="btn btn-primary page-scroll" href="#Info" id="downScroll">Scroll down to Planets</a>
 
 		</div>
     </div>
 </div>
 
 
-<div class="container-fluid bg-2" id="marsInfo">
+<div class="container-fluid bg-2" id="Info">
 	<div class="row">
 
     	<div class="col-md-3">
@@ -125,6 +91,8 @@ The rotational period and seasonal cycles of Mars are likewise similar to those 
 https://startbootstrap.com/template-overviews/scrolling-nav/ -->
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/scrolling-nav.js"></script>
+
+<script src="js/navbar.js"></script>
 
 </body>
 </html>
