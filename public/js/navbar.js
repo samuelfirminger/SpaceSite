@@ -18,6 +18,7 @@
               '<li><a href="mercury.html">Mercury</a></li>'+
               '<li><a href="venus.html">Venus</a></li>'+
               '<li><a href="earth.html">Earth</a></li>'+
+              '<li><a href="moon.html">The Moon</a></li>'+
               '<li><a href="mars.html">Mars</a></li>'+
               '<li><a href="jupiter.html">Jupiter</a></li>'+
               '<li><a href="saturn.html">Saturn</a></li>'+

@@ -84,6 +84,8 @@ function checkUrl(req) {
     console.log("RETURNING FALSE!");
     return false;
 }
+
+
 /*function getPet(url, response) {
     fs.readFile("./pet.html", ready);
     function ready(err, content) {
