@@ -1,7 +1,6 @@
 body {
     font-family: "Montserrat", sans-serif;
     color: #f5f6f7;
-
 }
 
 
@@ -24,7 +23,7 @@ canvas {
   background-position: center ;
   background-repeat: no-repeat;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 /*all to do with colouring the navbar correctly*/
@@ -79,4 +78,40 @@ canvas {
 
 .bg-1 {
 	background: #000000;
+  padding-bottom: 100px;
 }
+
+@media only screen and (min-width : 992px) {
+  .bg-2 {
+    background-image: url("../images/deepSpace.jpg");
+    background-size: 100% 100%;
+    background-position: center ;
+    background-attachment: fixed;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width : 320px) {
+  .bg-2 {
+    background-image: url("../images/deepSpace.jpg");
+    background-size: cover;
+    background-position: center ;
+    background-attachment: fixed;
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+}
+
+
+#downScroll{ 
+  background-color: #070915;
+    color:#ffffff;
+  margin-top: 20px;
+  letter-spacing: 0px;
+
+ }
+
+ h1 {
+    letter-spacing: 5px;
+ }
