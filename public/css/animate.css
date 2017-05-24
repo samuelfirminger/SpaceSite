@@ -103,6 +103,15 @@ canvas {
   }
 }
 
+#overlay { 
+    background-color: rgba(0,0,0,0.5);
+    background-size: 100% 100%;
+    background-position: center ;
+    background-attachment: fixed;
+    padding-top: 0px;
+    padding-bottom: -20px;
+ }
+
 
 #downScroll{ 
   background-color: #070915;

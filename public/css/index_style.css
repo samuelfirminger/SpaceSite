@@ -87,23 +87,25 @@ font-size: 20px ;
 }
 
 /*moon divider*/
-.bg-3 { 
-    background-image: url("../images/moon.jpg");
-    background-size: 100% 100%;
-	background-position: center ;
-	padding-top: 70px;
-    padding-bottom: 300px;
- }
+
 
 
 /*check screen size, if above a certain size, put sun next to planets, otherwise
 make the background black. It looks funny on mobile if the sun is there*/
 @media only screen and (min-width : 992px) {
-	 .bg-4 {
-	 	background-image: url("../images/thesun.png");
+	 .bg-3 { 
+      background-image: url("../images/moon.jpg");
+      background-size: 100% 100%;
+      background-position: center ;
+      padding-top: 70px;
+      padding-bottom: 300px;
+    }
+
+   .bg-4 {
+	 	 background-image: url("../images/thesun.png");
 	    background-size: 100% 100%;
-		background-position: center ;
-		padding-top: 70px;
+		  background-position: center ;
+		  padding-top: 70px;
 	    padding-bottom: 150px;
 	 }
  }
