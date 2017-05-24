@@ -15,14 +15,14 @@
       '<li class="dropdown">'+
               '<a href="#" class="dropdown-toggle" id="help" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planet Navigation <span class="caret"></span></a>'+
               '<ul class="dropdown-menu">'+
-              '<li><a href="#">Mercury</a></li>'+
-              '<li><a href="#">Venus</a></li>'+
-              '<li><a href="#">Earth</a></li>'+
+              '<li><a href="mercury.html">Mercury</a></li>'+
+              '<li><a href="venus.html">Venus</a></li>'+
+              '<li><a href="earth.html">Earth</a></li>'+
               '<li><a href="mars.html">Mars</a></li>'+
               '<li><a href="jupiter.html">Jupiter</a></li>'+
               '<li><a href="saturn.html">Saturn</a></li>'+
-              '<li><a href="#">Uranus</a></li>'+
-              '<li><a href="#">Neptune</a></li>'+
+              '<li><a href="uranus.html">Uranus</a></li>'+
+              '<li><a href="neptune.html">Neptune</a></li>'+
               '<li role="separator" class="divider"></li>'+
               '<li><a href="#">Planet Index</a></li>'+
             '</ul>'+

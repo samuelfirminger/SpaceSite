@@ -1,207 +1,193 @@
-var element 		= document.getElementById('simulation');
-var ctx				= element.getContext("2d");
-var camera 			= {};
-	camera.x 		= 0;
-	camera.y 		= 0;
+var simCanvas 		= document.getElementById('simulation');
+var toDisp				= simCanvas.getContext("2d");
+var center 			= {};
+	center.x 		= 0;
+	center.y 		= 0;
 var scale			= 1.0;
-var obj 			= [];
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 240;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 0.04878 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
+var planets 			= [];
 
 
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 215;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 0.0952 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
+var neptune	= {};
+	neptune.radius = 240;
+	neptune.x = Math.cos(neptune.angle)*neptune.radius; 
+	neptune.y = Math.sin(neptune.angle)*neptune.radius; 
+	neptune.orbital	= 10000; 
+	neptune.rotationSpeed	= ((0.04854 * Math.PI) / neptune.orbital); 
+	neptune.begin = Date.now();
+planets.push(neptune);
 
 
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 185;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 0.268 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 150;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 0.64 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 95;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 4.2 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 70;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 8 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 45;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 6.64 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
-
-var t			= {};
-	t.angle	    = Math.random()*Math.PI*2; 
-	t.radius    = 20;
-	t.x 		= Math.cos(t.angle)*t.radius; 
-	t.y 		= Math.sin(t.angle)*t.radius; 
-	t.duration	= 10000; 
-	t.rotSpeed	= 10 * Math.PI / t.duration; 
-	t.start		= Date.now();
-    	
-obj.push(t);
+var uranus = {};
+	uranus.radius = 215;
+	uranus.x = Math.cos(uranus.angle)*uranus.radius; 
+	uranus.y = Math.sin(uranus.angle)*uranus.radius; 
+	uranus.orbital = 10000; 
+	uranus.rotationSpeed = ((0.0952 * Math.PI) / uranus.orbital); 
+	uranus.begin = Date.now();
+planets.push(uranus);
 
 
+var saturn = {};
+	saturn.radius = 170;
+	saturn.x = Math.cos(saturn.angle)*saturn.radius; 
+	saturn.y = Math.sin(saturn.angle)*saturn.radius; 
+	saturn.orbital = 10000; 
+	saturn.rotationSpeed = ((0.2711 * Math.PI) / saturn.orbital); 
+	saturn.begin = Date.now();
+planets.push(saturn);
+
+
+var jupiter	= {};
+	jupiter.radius = 120;
+	jupiter.x = Math.cos(jupiter.angle)*jupiter.radius; 
+	jupiter.y = Math.sin(jupiter.angle)*jupiter.radius; 
+	jupiter.orbital	= 10000; 
+	jupiter.rotationSpeed = ((0.6722 * Math.PI) / jupiter.orbital); 
+	jupiter.begin = Date.now();
+planets.push(jupiter);
+
+var mars = {};
+	mars.radius = 70;
+	mars.x = Math.cos(mars.angle)*mars.radius; 
+	mars.y = Math.sin(mars.angle)*mars.radius; 
+	mars.orbital = 10000; 
+	mars.rotationSpeed	= ((4.2 * Math.PI) / mars.orbital); 
+	mars.begin = Date.now();
+planets.push(mars);
+
+
+var earth = {};
+	earth.radius  = 50;
+	earth.x = Math.cos(earth.angle)*earth.radius; 
+	earth.y = Math.sin(earth.angle)*earth.radius; 
+	earth.orbital = 10000; 
+	earth.rotationSpeed	= ((8 * Math.PI) / earth.orbital); 
+	earth.begin = Date.now();
+planets.push(earth);
+
+
+var venus = {};
+	venus.radius  = 35;
+	venus.x = Math.cos(venus.angle)*venus.radius; 
+	venus.y = Math.sin(venus.angle)*venus.radius; 
+	venus.orbital = 10000; 
+	venus.rotationSpeed	= ((13.33 * Math.PI) / venus.orbital); 
+	venus.begin = Date.now();
+planets.push(venus);
+
+
+var mercury	= {};
+	mercury.radius  = 20;
+	mercury.x = Math.cos(mercury.angle)*mercury.radius; 
+	mercury.y = Math.sin(mercury.angle)*mercury.radius; 
+	mercury.orbital	= 10000; 
+	mercury.rotationSpeed	= ((40 * Math.PI) / mercury.orbital); 
+	mercury.begin = Date.now();
+planets.push(mercury);
 
 function update(){
-	for(var i = 0; i < obj.length; i++){
-		var delta				= Date.now() - obj[i].start;
-		obj.start 				= Date.now();
-		var angle				= obj[i].rotSpeed * delta;
-        // The angle is now already in radian, no longer need to convert from degree to radian.
-		obj[i].x				= obj[i].radius * Math.cos(angle);
-		obj[i].y				= obj[i].radius * Math.sin(angle);								
+	for(var i = 0; i < planets.length; i++){
+		var delta = Date.now() - planets[i].begin;
+		planets.begin = Date.now();
+		var angle = planets[i].rotationSpeed * delta;
+
+		planets[i].x = planets[i].radius * Math.cos(angle);
+		planets[i].y = planets[i].radius * Math.sin(angle);								
 	}
 }
 
-function draw(){
+function render(){
+
     update();
-    ctx.clearRect(0,0,element.width,element.height);
+    toDisp.clearRect(0, 0, simCanvas.width, simCanvas.height);
+    toDisp.save();
     
-    ctx.save();
-    
-    ctx.translate(0-(camera.x - element.width/2),0-(camera.y-element.height/2));  	    
-    ctx.scale(scale,scale);
-    ctx.fillStyle = 'blue';
-    for(var i = 0; i < obj.length; i++){
-        ctx.beginPath();
-		ctx.arc(0,0,obj[i].radius,0,Math.PI*2);  
-		ctx.lineWidth = 1.5;
-		ctx.strokeStyle = "white";
-		ctx.stroke();
-        
-        ctx.beginPath();
+    toDisp.translate(0-(center.x - simCanvas.width/2),0-(center.y-simCanvas.height/2));  	    
+    toDisp.scale(scale,scale);
+
+    for(var i = 0; i < planets.length; i++){
+
+        toDisp.beginPath();
+		toDisp.arc(0, 0, planets[i].radius, 0, Math.PI*2);  
+
+		toDisp.lineWidth = 1.5;
+		toDisp.strokeStyle = "white";
+		toDisp.stroke();
+
+        toDisp.beginPath();
+
 		switch(i) {
 			case 0: 
-				ctx.arc(obj[i].x,obj[i].y,10,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#484BAC";
-				ctx.stroke();    
-        		ctx.fillStyle = "#484BAC";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 11, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#484BAC";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#484BAC";
+				toDisp.fill();
 				break ; 
 			case 1: 
-				ctx.arc(obj[i].x,obj[i].y,10,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#CAF0F1";
-				ctx.stroke();    
-        		ctx.fillStyle = "#CAF0F1";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 12, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#CAF0F1";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#CAF0F1";
+				toDisp.fill();
 				break ;
 			case 2: 
-				ctx.arc(obj[i].x,obj[i].y,14,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#AC9866";
-				ctx.stroke();    
-        		ctx.fillStyle = "#AC9866";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 20, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#AC9866";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#AC9866";
+				toDisp.fill();
 				break ;			
 			case 3: 
-				ctx.arc(obj[i].x,obj[i].y,17,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#B1795E";
-				ctx.stroke();    
-        		ctx.fillStyle = "#B1795E";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 25, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#B1795E";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#B1795E";
+				toDisp.fill();
 				break ;	
 			case 4: 
-				ctx.arc(obj[i].x,obj[i].y,7,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#985D35";
-				ctx.stroke();    
-        		ctx.fillStyle = "#985D35";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 7, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#985D35";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#985D35";
+				toDisp.fill();
 				break ;	
 			case 5: 
-				ctx.arc(obj[i].x,obj[i].y,8,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#446EFE";
-				ctx.stroke();    
-        		ctx.fillStyle = "#446EFE";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 8, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#446EFE";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#446EFE";
+				toDisp.fill();
 				break ;
 			case 6:
-				ctx.arc(obj[i].x,obj[i].y,6,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#8B3D0C";
-				ctx.stroke();    
-        		ctx.fillStyle = "#8B3D0C";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 6, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5; 
+				toDisp.strokeStyle = "#8B3D0C";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#8B3D0C";
+				toDisp.fill();
 				break ;	
 			case 7: 
-				ctx.arc(obj[i].x,obj[i].y,6,0,Math.PI*2);  
-				ctx.lineWidth = 1.5;
-				ctx.strokeStyle = "#6D6D6D";
-				ctx.stroke();    
-        		ctx.fillStyle = "#6D6D6D";
-				ctx.fill();
+				toDisp.arc(planets[i].x, planets[i].y, 6, 0, Math.PI*2);  
+				toDisp.lineWidth = 1.5;
+				toDisp.strokeStyle = "#6D6D6D";
+				toDisp.stroke();    
+        		toDisp.fillStyle = "#6D6D6D";
+				toDisp.fill();
 				break ;										 				
 			default :
 				break ; 
-
 		}
-
     }
     
-    ctx.restore();
-    requestAnimationFrame(draw);
+    toDisp.restore();
+    requestAnimationFrame(render);
 }
 
-
-draw();
+render();

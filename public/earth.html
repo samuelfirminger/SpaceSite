@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SolarNet</title> 
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <!--add customised css file here--> 
+    <link type="text/css" rel="stylesheet" href="css/earth.css"/> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+</head> 
+
+<body id="top-page" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<nav id="navMenu"></nav>
+<script src="../js/navbar.js"></script>
+
+
+<div class="container-fluid bg-1">
+  <div class="row">
+    
+    <div class="col-md-3 col-md-offset-1">
+                <div id="myCarousel" class="carousel slide">
+                  <ol class="carousel-indicators"> 
+                  <li data-target = "#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target = "#myCarousel" data-slide-to="1"></li>
+                  </ol>
+
+
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="images/earth2.png" alt="Earth" class="img-responsive"/>
+                    </div>
+
+                    <div class="item">
+                      <img src="images/svg/earth.svg" alt="Earth" class="img-responsive"/>
+                    </div>
+                  </div>
+
+                  <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                  </a>
+
+                  <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                  </a>
+              </div>
+    </div>  
+
+    <div class="col-md-6"> 
+      <h1> EARTH </h1>
+
+      <p>Earth, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial planets.
+
+According to radiometric dating and other sources of evidence, Earth formed about 4.54 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, Earth's only natural satellite. During one orbit around the Sun, Earth rotates about its axis over 365 times; thus, an Earth year is about 365.26 days long. Earth's axis of rotation is tilted, producing seasonal variations on the planet's surface. The gravitational interaction between the Earth and Moon causes ocean tides, stabilizes the Earth's orientation on its axis, and gradually slows its rotation.
+<br></br>
+
+Earth's lithosphere is divided into several rigid tectonic plates that migrate across the surface over periods of many millions of years. About 71% of Earth's surface is covered with water, mostly by its oceans. The remaining 29% is land consisting of continents and islands that together have many lakes, rivers and other sources of water that contribute to the hydrosphere.</p>
+
+    <a class="btn btn-primary page-scroll" href="#Info">Scroll down to Planets</a>
+
+    </div>
+    </div>
+</div>
+
+
+<div class="container-fluid bg-2" id="Info">
+    <div id="overlay">
+    <div class="row">
+        <div class="col-md-3">
+          <a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/NASAEarth">Tweets by NASAEarth</a> <script  src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="col-md-3"> 
+            <h1>EARTH STATISTICS</h1>
+            <p>Some random facts are gonna go here yeh</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<!-- add javascript to bottom of the page so it loads faster-->
+<!--bootstrap uses jquery so need to load jquery script first--> 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<!-- the scroll function/scripts was obtained from here 
+https://startbootstrap.com/template-overviews/scrolling-nav/ -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+</body>
+</html>
