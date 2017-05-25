@@ -4,6 +4,9 @@ body {
 
 }
 
+/*#fadeText {
+  opacity: 0.0
+}*/
 
 /*all to do with colouring the navbar correctly*/
 .navbar {
@@ -35,7 +38,7 @@ body {
 
 .navbar .navbar-brand {
   padding-top: 15px;
-  margin-left: 1px !important;
+  margin-left:0px !important;
 }
 
 .nav.navbar-nav li a {
@@ -87,35 +90,43 @@ font-size: 20px ;
 }
 
 /*moon divider*/
-.bg-3 { 
-    background-image: url("../images/moon.jpg");
-    background-size: 100% 100%;
-	background-position: center ;
-	padding-top: 70px;
-    padding-bottom: 300px;
- }
+
 
 
 /*check screen size, if above a certain size, put sun next to planets, otherwise
 make the background black. It looks funny on mobile if the sun is there*/
 @media only screen and (min-width : 992px) {
-	 .bg-4 {
-	 	background-image: url("../images/thesun.png");
+	 .bg-3 { 
+      background-image: url("../images/moon.jpg");
+      background-size: 100% 100%;
+      background-position: center ;
+      padding-top: 70px;
+      padding-bottom: 300px;
+    }
+
+   .bg-4 {
+	 	 background-image: url("../images/thesun.png");
 	    background-size: 100% 100%;
-		background-position: center ;
-		padding-top: 70px;
+		  background-position: center ;
+		  padding-top: 70px;
 	    padding-bottom: 150px;
 	 }
  }
 
 @media only screen and (min-width : 320px) {
-.bg-4 {
- 	background-color: #000000;
-    background-size: 100% 100%;
-	background-position: center ;
-	padding-top: 70px;
-    padding-bottom: 150px;
- }
+  .bg-4 {
+   	background-color: #000000;
+      background-size: 100% 100%;
+  	background-position: center ;
+  	padding-top: 70px;
+      padding-bottom: 150px;
+   }
+
+   /*so the navbar brand is on right place in mobile*/
+   .navbar .navbar-brand {
+    padding-top: 15px;
+    margin-left:15px !important;
+  }
 }
 
 

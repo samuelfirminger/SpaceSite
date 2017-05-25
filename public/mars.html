@@ -7,7 +7,7 @@
   	<title>SolarNet</title>	
   	<link href="css/bootstrap.min.css" rel="stylesheet"/>
   	<!--add customised css file here--> 
-  	<link type="text/css" rel="stylesheet" href="css/mars.css"/> 
+  	<link type="text/css" rel="stylesheet" href="css/planet-style.css"/> 
   	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 </head> 
 
@@ -52,32 +52,56 @@
 		</div>	
 
 		<div class="col-md-6"> 
-			<h1> MARS </h1>
-
+    
+    		<div class="row">
+                 <div class="col-md-6">
+                    <img src="images/gifs/mars.gif" alt="MarsGif" class="img-responsive"/>
+                </div>
+            </div>
+ 
 			<p> Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.
 
-The rotational period and seasonal cycles of Mars are likewise similar to those of Earth, as is the tilt that produces the seasons. Mars is the site of Olympus Mons, the largest volcano and second-highest known mountain in the Solar System, and of Valles Marineris, one of the largest canyons in the Solar System. The smooth Borealis basin in the northern hemisphere covers 40% of the planet and may be a giant impact feature. Mars has two moons, Phobos and Deimos, which are small and irregularly shaped. These may be captured asteroids, similar to 5261 Eureka, a Mars trojan.</p>
-
-		<a class="btn btn-primary page-scroll" href="#Info" id="downScroll">Scroll down to Planets</a>
+            The rotational period and seasonal cycles of Mars are likewise similar to those of Earth, as is the tilt that produces the seasons. Mars is the site of Olympus Mons, the largest volcano and second-highest known mountain in the Solar System, and of Valles Marineris, one of the largest canyons in the Solar System. The smooth Borealis basin in the northern hemisphere covers 40% of the planet and may be a giant impact feature. Mars has two moons, Phobos and Deimos, which are small and irregularly shaped. These may be captured asteroids, similar to 5261 Eureka, a Mars trojan.</p>
+            <br></br>
+		<a class="btn btn-primary page-scroll" href="#marsPage" id="downScroll">More Information</a>
 
 		</div>
     </div>
 </div>
 
 
-<div class="container-fluid bg-2" id="Info">
-	<div class="row">
+<div class="container-fluid bg-2" id="marsPage">
+    <div id="overlay">
+    	<div class="row">
 
-    	<div class="col-md-3">
-    		<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/MarsCuriosity">Tweets by MarsCuriosity</a> <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    	</div>
+        	<div class="col-md-3">
+        		<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/MarsCuriosity">Tweets by MarsCuriosity</a> <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        	</div>
 
-    	<div class="col-md-3"> 
-        	<h1>MARS STATISTICS</h1>
-        	<p>Some random facts are gonna go here yeh</p>
-    	</div>
+        	<div class="col-md-3"> 
+
+            	<h1>MARS STATISTICS</h1>
+            	<p>Some random facts are gonna go here yeh</p>
+
+                <script id="built-in-helpers-template" type="text/x-handlebars-template">
+                            {{#each animals}}
+                        <p>
+                            The {{capitalize this.name}} says
+                            {{#if this.noise}}
+                            "{{this.noise}}".
+                            {{else}}
+                             nothing since its a {{this.name}}.
+                            {{/if}}
+                        </p>
+                        {{/each}}
+                </script>
+
+    <div class="content-placeholder"></div>
 
 
+
+        	</div>
+        </div>
     </div>
 </div>
 
@@ -94,7 +118,10 @@ https://startbootstrap.com/template-overviews/scrolling-nav/ -->
 <script src="js/scrolling-nav.js"></script>
 
 <script src="js/navbar.js"></script>
-<script src="../js/navbar.js"></script>
+
+
+<script src="js/handlebars-v4.0.10.js"></script>
+<script src="js/server2.js"></script>
 
 </body>
 </html>

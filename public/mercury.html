@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  	<title>SolarNet</title>	
+  	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+  	<!--add customised css file here--> 
+  	<link type="text/css" rel="stylesheet" href="css/planet-style.css"/> 
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+</head> 
+
+<!-- give the top of the page an id so it can scroll back up -->
+<body id="top-page" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- nav bar at the top of the page -->
+<nav id="navMenu"></nav>
+
+
+
+<!--  -->
+<div class="container-fluid bg-1">
+	<div class="row">
+		
+		<div class="col-md-3 col-md-offset-1">
+                <div id="myCarousel" class="carousel slide">
+                	<ol class="carousel-indicators"> 
+                	<li data-target = "#myCarousel" data-slide-to="0" class="active"></li>
+                	<li data-target = "#myCarousel" data-slide-to="1"></li>
+                	</ol>
+
+
+                	<div class="carousel-inner">
+                		<div class="item active">
+                			<img src="images/mercury.jpg" alt="Mercury" class="img-responsive"/>
+                		</div>
+
+                		<div class="item">
+                			<img src="images/svg/mercury.svg" alt="Mercury" class="img-responsive"/>
+                		</div>
+                	</div>
+
+                	<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                		<span class="icon-prev"></span>
+                	</a>
+
+                	<a class="carousel-control right" href="#myCarousel" data-slide="next">
+                		<span class="icon-next"></span>
+                	</a>
+            	</div>
+		</div>	
+
+		<div class="col-md-6"> 
+			<div class="row">
+                 <div class="col-md-6">
+                    <img src="images/gifs/mercury.gif" alt="MercuryGif" class="img-responsive"/>
+                </div>
+            </div>
+
+
+			<p> Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 88 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger to the gods.
+            Like Venus, Mercury orbits the Sun within Earth's orbit as an inferior planet, so it can only be seen visually in the morning or the evening sky, and never exceeds 28° away from the Sun. Also, like Venus and the Moon, the planet displays the complete range of phases as it moves around its orbit relative to Earth. Seen from Earth, this cycle of phases reoccurs approximately every 116 days, the so-called synodic period. Although Mercury can appear as a bright star-like object when viewed from Earth, its proximity to the Sun often makes it more difficult to see than Venus.
+            <br></br>
+            Mercury is tidally or gravitationally locked with the Sun in a 3:2 resonance, and rotates in a way that is unique in the Solar System. As seen relative to the fixed stars, it rotates on its axis exactly three times for every two revolutions it makes around the Sun. As seen from the Sun, in a frame of reference that rotates with the orbital motion, it appears to rotate only once every two Mercurian years. An observer on Mercury would therefore see only one day every two years.
+            </p>
+
+		<a class="btn btn-primary page-scroll" href="#mercuryPage" id="downScroll">More Information</a>
+
+		</div>
+    </div>
+</div>
+
+
+<div class="container-fluid bg-2" id="mercuryPage">
+    <div id="overlay">
+    	<div class="row">
+
+        	<div class="col-md-3">
+        		<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/MESSENGER2011">Tweets by MESSENGER2011</a> <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        	</div>
+
+        	<div class="col-md-3"> 
+            	<h1>MERCURY STATISTICS</h1>
+            	<p>Some random facts are gonna go here yeh</p>
+        	</div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- add javascript to bottom of the page so it loads faster-->
+<!--bootstrap uses jquery so need to load jquery script first--> 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<!-- the scroll function/scripts was obtained from here 
+https://startbootstrap.com/template-overviews/scrolling-nav/ -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+<script src="js/navbar.js"></script>
+<script src="../js/navbar.js"></script>
+
+</body>
+</html>
