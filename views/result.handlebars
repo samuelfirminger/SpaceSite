@@ -1,0 +1,52 @@
+<!-- nav bar at the top of the page -->
+<nav id="navMenu"></nav>
+
+<div class="container-fluid bg-1 text-md-center">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3 ">
+    	 <h1> Search Results </h1>
+         <table class="table table-bordered table-responsive">
+           <thead>
+             <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Destination</th>
+                <th>Date Launched</th>
+                <th>Mission Cost</th>
+             </tr>        
+            </thead>       
+            <tbody>
+             {{#each data}}
+             <tr>
+                 <td>{{name}}</td> 
+                 <td>{{number}}</td>
+                 <td>{{destination}}</td>
+                 <td>{{launched}}</td>
+                 <td>{{cost}}</td>
+                 {{/each}}
+             </tr>
+            </tbody>
+         </table>
+      </div>
+  </div>
+
+    </div>
+
+
+
+
+</div> 
+
+<!-- add javascript to bottom of the page so it loads faster-->
+<!--bootstrap uses jquery so need to load jquery script first--> 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<!-- the scroll function/scripts was obtained from here 
+https://startbootstrap.com/template-overviews/scrolling-nav/ -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+<!-- this is loading the navbar from the script file -->
+<script src="../js/navbar.js"></script>
+

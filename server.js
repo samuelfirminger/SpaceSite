@@ -83,30 +83,30 @@ app.post('/insert/entry', function (req,res) {
 })
 
 //Perform Queries on Mission Database
-app.post('/search/name', function(req, res) {      
+app.post('/name', function(req, res) {      
     query("SELECT * FROM Missions WHERE name = ?", req.body.name, res);
 });
-app.post('/search/number', function(req, res) {      
+app.post('/number', function(req, res) {      
     query("SELECT * FROM Missions WHERE missionNum = ?", req.body.number, res);
 });
-app.post('/search/destination', function(req, res) {      
+app.post('/destination', function(req, res) {      
     query("SELECT * FROM Missions WHERE destination = ?", req.body.destination, res);
 });
-app.post('/search/launch', function(req, res) {      
+app.post('/launch', function(req, res) {      
     query("SELECT * FROM Missions WHERE launched = ?", req.body.year, res);
 });
-app.post('/search/cost', function(req, res) {      
+app.post('/cost', function(req, res) {      
     query("SELECT * FROM Missions WHERE cost = ?", req.body.cost, res);
 });
 
 function query(statement, searchTerm, res) {
-    var results = []; 
+    var data = []; 
     
     db.serialize(function () {      
        db.each(statement, searchTerm, function(err, row) {
-           results.push({results: results, name: row.name, number: row.missionNum, destination: row.destination, launched: row.launched, cost: row.cost})
+           data.push({name: row.name, number: row.missionNum, destination: row.destination, launched: row.launched, cost: row.cost})
        }, function() {
-        res.render('index',{"results": results});
+        res.render('result', {layout: 'results', data: data});
     })
   });
 }

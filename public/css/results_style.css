@@ -1,0 +1,73 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+}
+
+.bg-1 {
+    background-color: black ; 
+    background-size: 100% 100% ;
+    
+    background-repeat: no-repeat ; 
+    padding-top: 100px ; 
+    padding-bottom: 100px ; 
+    
+    
+}
+
+h1 {
+    
+    color: white ; 
+}
+
+table {
+    color: white ; 
+}
+/*all to do with colouring the navbar correctly*/
+.navbar {
+	background-color: #070915;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+
+    letter-spacing: 5px;
+}
+
+.navbar-default .navbar-nav .dropdown.open a:focus {
+    background-color: #070915;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #070915;
+    color:#ffffff;
+}
+
+.navbar-brand {
+
+   color: #ffffff !important ; 
+ 
+}
+
+.navbar .navbar-brand {
+  padding-top: 15px;
+  margin-left:0px !important;
+}
+
+.nav.navbar-nav li a {
+   color: #ffffff;
+ }
+
+.navbar-nav li a:hover {
+    color: #1abc9c !important;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px;
+  width: auto;
+}
