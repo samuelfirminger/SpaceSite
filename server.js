@@ -70,16 +70,15 @@ app.get('*', function (req,res) {
 
 //================================Database Handling=======================================
 //Insert into the Mission Database
-app.post('/insert/entry', function (req,res) {
-    console.log("Attempting to add the following data:");
-    console.log("Name: ",req.body.name);
-    console.log("missionNum: ", req.body.number);
-    console.log("Destination: ", req.body.destination);
-    console.log("Launched: ", req.body.year);
-    console.log("Cost: ", req.body.cost);
-       
+app.post('/insert', function (req,res) {
+    var newName = req.body.name.toLowerCase();
+    var newNum  = req.body.number.toLowerCase(); 
+    var newDest = req.body.destination.toLowerCase();
+    var newYear = req.body.year.toLowerCase();  
+    var newCost = req.body.cost.toLowerCase();
+    
     var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)')
-    stmt.run(req.body.name,req.body.number,req.body.destination,req.body.year,req.body.cost); 
+    stmt.run(newName,newNum,newDest,newYear,newCost); 
     stmt.finalize();                
     res.send("Added new entry");
 })
