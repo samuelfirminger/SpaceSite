@@ -29,7 +29,7 @@
             '</ul>'+
           '</li>'+
           
-        '<li><a href="index.html">HOME</a></li>'+
+        '<li><a href="/">HOME</a></li>'+
         '<li><a href="animate.html">SIMULATION</a></li>'+
         '<li><a href="login.html">LOGIN</a></li>'+
       '</ul>'+

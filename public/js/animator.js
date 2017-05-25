@@ -8,9 +8,9 @@ var planets 			= [];
 
 
 var neptune	= {};
-	neptune.radius = 240;
-	neptune.x = Math.cos(neptune.angle)*neptune.radius; 
-	neptune.y = Math.sin(neptune.angle)*neptune.radius; 
+	neptune.size = 240;
+	neptune.x = Math.cos(neptune.angle)*neptune.size; 
+	neptune.y = Math.sin(neptune.angle)*neptune.size; 
 	neptune.orbital	= 10000; 
 	neptune.rotationSpeed	= ((0.04854 * Math.PI) / neptune.orbital); 
 	neptune.begin = Date.now();
@@ -18,9 +18,9 @@ planets.push(neptune);
 
 
 var uranus = {};
-	uranus.radius = 215;
-	uranus.x = Math.cos(uranus.angle)*uranus.radius; 
-	uranus.y = Math.sin(uranus.angle)*uranus.radius; 
+	uranus.size = 215;
+	uranus.x = Math.cos(uranus.angle)*uranus.size; 
+	uranus.y = Math.sin(uranus.angle)*uranus.size; 
 	uranus.orbital = 10000; 
 	uranus.rotationSpeed = ((0.0952 * Math.PI) / uranus.orbital); 
 	uranus.begin = Date.now();
@@ -28,58 +28,54 @@ planets.push(uranus);
 
 
 var saturn = {};
-	saturn.radius = 170;
-	saturn.x = Math.cos(saturn.angle)*saturn.radius; 
-	saturn.y = Math.sin(saturn.angle)*saturn.radius; 
+	saturn.size = 170;
+	saturn.x = Math.cos(saturn.angle)*saturn.size; 
+	saturn.y = Math.sin(saturn.angle)*saturn.size; 
 	saturn.orbital = 10000; 
 	saturn.rotationSpeed = ((0.2711 * Math.PI) / saturn.orbital); 
 	saturn.begin = Date.now();
 planets.push(saturn);
 
-
 var jupiter	= {};
-	jupiter.radius = 120;
-	jupiter.x = Math.cos(jupiter.angle)*jupiter.radius; 
-	jupiter.y = Math.sin(jupiter.angle)*jupiter.radius; 
+	jupiter.size = 120;
+	jupiter.x = Math.cos(jupiter.angle)*jupiter.size; 
+	jupiter.y = Math.sin(jupiter.angle)*jupiter.size; 
 	jupiter.orbital	= 10000; 
 	jupiter.rotationSpeed = ((0.6722 * Math.PI) / jupiter.orbital); 
 	jupiter.begin = Date.now();
 planets.push(jupiter);
 
 var mars = {};
-	mars.radius = 70;
-	mars.x = Math.cos(mars.angle)*mars.radius; 
-	mars.y = Math.sin(mars.angle)*mars.radius; 
+	mars.size = 70;
+	mars.x = Math.cos(mars.angle)*mars.size; 
+	mars.y = Math.sin(mars.angle)*mars.size; 
 	mars.orbital = 10000; 
 	mars.rotationSpeed	= ((4.2 * Math.PI) / mars.orbital); 
 	mars.begin = Date.now();
 planets.push(mars);
 
-
 var earth = {};
-	earth.radius  = 50;
-	earth.x = Math.cos(earth.angle)*earth.radius; 
-	earth.y = Math.sin(earth.angle)*earth.radius; 
+	earth.size  = 50;
+	earth.x = Math.cos(earth.angle)*earth.size; 
+	earth.y = Math.sin(earth.angle)*earth.size; 
 	earth.orbital = 10000; 
 	earth.rotationSpeed	= ((8 * Math.PI) / earth.orbital); 
 	earth.begin = Date.now();
 planets.push(earth);
 
-
 var venus = {};
-	venus.radius  = 35;
-	venus.x = Math.cos(venus.angle)*venus.radius; 
-	venus.y = Math.sin(venus.angle)*venus.radius; 
+	venus.size  = 35;
+	venus.x = Math.cos(venus.angle)*venus.size; 
+	venus.y = Math.sin(venus.angle)*venus.size; 
 	venus.orbital = 10000; 
 	venus.rotationSpeed	= ((13.33 * Math.PI) / venus.orbital); 
 	venus.begin = Date.now();
 planets.push(venus);
 
-
 var mercury	= {};
-	mercury.radius  = 20;
-	mercury.x = Math.cos(mercury.angle)*mercury.radius; 
-	mercury.y = Math.sin(mercury.angle)*mercury.radius; 
+	mercury.size  = 20;
+	mercury.x = Math.cos(mercury.angle)*mercury.size; 
+	mercury.y = Math.sin(mercury.angle)*mercury.size; 
 	mercury.orbital	= 10000; 
 	mercury.rotationSpeed	= ((40 * Math.PI) / mercury.orbital); 
 	mercury.begin = Date.now();
@@ -91,8 +87,8 @@ function update(){
 		planets.begin = Date.now();
 		var angle = planets[i].rotationSpeed * delta;
 
-		planets[i].x = planets[i].radius * Math.cos(angle);
-		planets[i].y = planets[i].radius * Math.sin(angle);								
+		planets[i].x = planets[i].size * Math.cos(angle);
+		planets[i].y = planets[i].size * Math.sin(angle);								
 	}
 }
 
@@ -108,7 +104,7 @@ function render(){
     for(var i = 0; i < planets.length; i++){
 
         toDisp.beginPath();
-		toDisp.arc(0, 0, planets[i].radius, 0, Math.PI*2);  
+		toDisp.arc(0, 0, planets[i].size, 0, Math.PI*2);  
 
 		toDisp.lineWidth = 1.5;
 		toDisp.strokeStyle = "white";
