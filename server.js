@@ -25,7 +25,8 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //Valid URLs: used for validation
-var validUrls = ["/","/home","/what","/where","/simulation","/insert?","/mars"];
+var validUrls = ["/","/home","/what","/where","/simulation","/insert?","/mercury", "/venus", "/earth", 
+"/moon", "/mars", "/jupiter", "/saturn", "/uranus", "/neptune", "/simulation"];
 
 var server = app.listen(8080, function() {
     var host = server.address().address;
@@ -50,10 +51,18 @@ app.get('*', function (req,res) {
         switch(url) {
             case('/')           : 
             case('/home')       : res.render('index'); return;
-            case('/simulation') : res.sendFile(__dirname + '/public/animate.html'); return;
+            case('/simulation')       : res.render('simulation', {layout: 'simulator'}); return;
             case('/what')       : res.sendFile(__dirname + '/public/what.html');    return;
             case('/insert?')    : res.sendFile(__dirname + '/public/insert.html');  return;
+            case('/mercury')       : res.render('mercury', {layout: 'planet'}); return; 
+            case('/venus')       : res.render('venus', {layout: 'planet'}); return;
+            case('/earth')       : res.render('earth', {layout: 'planet'}); return; 
+            case('/moon')       : res.render('moon', {layout: 'planet'}); return; 
             case('/mars')       : res.render('mars', {layout: 'planet'}); return;
+            case('/jupiter')       : res.render('jupiter', {layout: 'planet'}); return;
+            case('/saturn')       : res.render('saturn', {layout: 'planet'}); return;
+            case('/uranus')       : res.render('uranus', {layout: 'planet'}); return;
+            case('/neptune')       : res.render('neptune', {layout: 'planet'}); return;
         }
     }
 })
