@@ -33,6 +33,11 @@ app.get('/', function(req, res){
     res.render('index');
 })
 
+
+app.get('/mars', function(req, res) {
+    res.render('mars', {layout: 'planet'}) ;
+})
+
 // parse application/json
 app.use(bodyParser.json());
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
