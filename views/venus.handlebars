@@ -65,7 +65,14 @@
 
             <div class="col-md-3"> 
                 <h1>VENUS STATISTICS</h1>
-                <p>Some random facts are gonna go here yeh</p>
+            <ul>
+               {{#each data}}
+                  <li>Radius: {{radius}} km</li>
+                  <li>Distance from Earth: {{distance}} AU</li>
+                  <li>Gravity: {{gravity}} g</li>
+                  <li>Moons: {{moons}}</li>
+               {{/each}}
+            </ul>
             </div>
         </div>
     </div>

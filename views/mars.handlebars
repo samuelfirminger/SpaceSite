@@ -67,6 +67,15 @@
             	<h1>MARS STATISTICS</h1>
             	<p>Some random facts are gonna go here yeh</p>
 
+                <ul>
+                   {{#each data}}
+                      <li>Radius: {{radius}} km</li>
+                      <li>Distance from Earth: {{distance}} AU</li>
+                      <li>Gravity: {{gravity}} g</li>
+                      <li>Moons: {{moons}}</li>
+                   {{/each}}
+                </ul>
+                
                 <script id="built-in-helpers-template" type="text/x-handlebars-template">
                             {{#each animals}}
                         <p>

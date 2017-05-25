@@ -65,7 +65,16 @@ Jupiter is primarily composed of hydrogen with a quarter of its mass being heliu
 
         <div class="col-md-3"> 
             <h1>JUPITER STATISTICS</h1>
-            <p>Some random facts are gonna go here yeh</p>
+            
+            <ul>
+               {{#each data}}
+                  <li>Radius: {{radius}} km</li>
+                  <li>Distance from Earth: {{distance}} AU</li>
+                  <li>Gravity: {{gravity}} g</li>
+                  <li>Moons: {{moons}}</li>
+               {{/each}}
+            </ul>
+            
         </div>
       </div>
   </div>
