@@ -72,41 +72,53 @@ app.get('*', function (req,res) {
 app.post('/insert/entry', function (req,res) {
     console.log("Attempting to add the following data:");
     console.log("Name: ",req.body.name);
-    console.log("missionNum: ", req.body.missionNum);
+    console.log("missionNum: ", req.body.number);
     console.log("Destination: ", req.body.destination);
-    console.log("Launched: ", req.body.launched);
+    console.log("Launched: ", req.body.year);
     console.log("Cost: ", req.body.cost);
+       
     var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)')
-    stmt.run(req.body.name,req.body.missionNum,req.body.destination,req.body.launched,req.body.cost); 
+    stmt.run(req.body.name,req.body.number,req.body.destination,req.body.year,req.body.cost); 
     stmt.finalize();                
     res.send("Added new entry");
 })
 
 //Perform Queries on Mission Database
-app.post('/name', function(req, res) {      
-    query("SELECT * FROM Missions WHERE name = ?", req.body.name, res);
+app.post('/name', function(req, res) {  
+    var searchName = req.body.name.toLowerCase();
+    query("SELECT * FROM Missions WHERE name = ?", searchName, res);
 });
 app.post('/number', function(req, res) {      
-    query("SELECT * FROM Missions WHERE missionNum = ?", req.body.number, res);
+    var searchNumber = req.body.number.toLowerCase();
+    query("SELECT * FROM Missions WHERE missionNum = ?", searchNumber, res);
 });
-app.post('/destination', function(req, res) {      
-    query("SELECT * FROM Missions WHERE destination = ?", req.body.destination, res);
+app.post('/destination', function(req, res) {  
+    var searchDestination = req.body.destination.toLowerCase();    
+    query("SELECT * FROM Missions WHERE destination = ?", searchDestination, res);
 });
 app.post('/launch', function(req, res) {      
-    query("SELECT * FROM Missions WHERE launched = ?", req.body.year, res);
+    var searchYear = req.body.year.toLowerCase();
+    query("SELECT * FROM Missions WHERE launched = ?", searchYear, res);
 });
-app.post('/cost', function(req, res) {      
-    query("SELECT * FROM Missions WHERE cost = ?", req.body.cost, res);
+app.post('/cost', function(req, res) {  
+    var searchCost = req.body.cost.toLowerCase();
+    query("SELECT * FROM Missions WHERE cost = ?", searchCost, res);
 });
 
 function query(statement, searchTerm, res) {
     var data = []; 
+    var returnName, returnNumber, returnDestination, returnLaunch, returnCost;
     
     db.serialize(function () {      
        db.each(statement, searchTerm, function(err, row) {
-           data.push({name: row.name, number: row.missionNum, destination: row.destination, launched: row.launched, cost: row.cost})
+           data.push({name: toTitleCase(row.name), number: row.missionNum, destination: toTitleCase(row.destination), launched: row.launched, cost: row.cost})
        }, function() {
         res.render('result', {layout: 'results', data: data});
     })
   });
+}
+
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
