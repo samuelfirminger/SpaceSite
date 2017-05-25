@@ -38,6 +38,7 @@ var server = app.listen(8080, function() {
 app.get('*', function (req,res) {
     var url = req.url.toLowerCase();
     var urlValid = false;
+    //var data = [];
     
     validUrls.forEach(function(entry) {
         if(url === entry) {
@@ -51,19 +52,17 @@ app.get('*', function (req,res) {
         switch(url) {
             case('/')           : 
             case('/home')       : res.render('index'); return;
-            case('/simulation')       : res.render('simulation', {layout: 'simulator'}); return;
-            case('/what')       : res.sendFile(__dirname + '/public/what.html');    return;
-            case('/insert?')    : res.sendFile(__dirname + '/public/insert.html');  return;
-            case('/mercury')       : res.render('mercury', {layout: 'planet'}); return; 
-            case('/venus')       : res.render('venus', {layout: 'planet'}); return;
-            case('/earth')       : res.render('earth', {layout: 'planet'}); return; 
-            case('/moon')       : res.render('moon', {layout: 'planet'}); return; 
-            case('/mars')       : res.render('mars', {layout: 'planet'}); return;
-            case('/jupiter')      : res.render('jupiter', {layout: 'planet'}); return;
-            case('/saturn')       : res.render('saturn', {layout: 'planet'}); return;
-            case('/uranus')       : res.render('uranus', {layout: 'planet'}); return;
-            case('/neptune')      : res.render('neptune', {layout: 'planet'}); return;
-            case('/searchbody')   : res.render('searchbody', {layout: 'search'}); return;
+            case('/simulation') : res.render('simulation', {layout: 'simulator'}); return;
+            case('/mercury')    : getStats('mercury', res); return;
+            case('/venus')      : getStats('venus', res); return;
+            case('/earth')      : getStats('earth', res); return;
+            case('/moon')       : getStats('moon', res); return;
+            case('/mars')       : getStats('mars', res); return;
+            case('/jupiter')    : getStats('jupiter', res); return;
+            case('/saturn')     : getStats('saturn', res); return;
+            case('/uranus')     : getStats('uranus', res); return;
+            case('/neptune')    : getStats('neptune', res); return;
+            case('/searchbody') : res.render('searchbody', {layout: 'search'}); return;
         }
     }
 })
@@ -79,13 +78,14 @@ app.post('/insert', function (req,res) {
     
     var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)')
     stmt.run(newName,newNum,newDest,newYear,newCost); 
-    stmt.finalize();                
-     res.render('searchbody', {layout: 'search'});
+    stmt.finalize();            
+    res.render('searchbody', {layout: 'search'});
 })
 
 //Perform Queries on Mission Database
 app.post('/name', function(req, res) {      
-    query("SELECT * FROM Missions WHERE name = ?", req.body.name, res);
+    var searchName = req.body.name.toLowerCase();
+    query("SELECT * FROM Missions WHERE name = ?", searchName, res);
 });
 app.post('/number', function(req, res) {      
     var searchNumber = req.body.number.toLowerCase();
@@ -103,6 +103,17 @@ app.post('/cost', function(req, res) {
     var searchCost = req.body.cost.toLowerCase();
     query("SELECT * FROM Missions WHERE cost = ?", searchCost, res);
 });
+
+function getStats(planet, res) {
+    var data = [];
+    db.serialize(function () {
+        db.each("SELECT * FROM Stats WHERE planet = ?", planet, function(err, row) {
+        data.push({radius: row.radius, distance: row.distance, gravity: row.gravity, moons: row.moons})
+        }, function() {
+            res.render(planet, {layout: 'planet', data : data});
+        }) 
+    });
+}
 
 function query(statement, searchTerm, res) {
     var data = []; 
