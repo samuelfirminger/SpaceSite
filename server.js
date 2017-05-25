@@ -26,7 +26,7 @@ app.set('view engine', 'handlebars');
 
 //Valid URLs: used for validation
 var validUrls = ["/","/home","/what","/where","/simulation","/insert?","/mercury", "/venus", "/earth", 
-"/moon", "/mars", "/jupiter", "/saturn", "/uranus", "/neptune", "/simulation"];
+"/moon", "/mars", "/jupiter", "/saturn", "/uranus", "/neptune", "/simulation", "/searchbody"];
 
 var server = app.listen(8080, function() {
     var host = server.address().address;
@@ -63,6 +63,7 @@ app.get('*', function (req,res) {
             case('/saturn')       : res.render('saturn', {layout: 'planet'}); return;
             case('/uranus')       : res.render('uranus', {layout: 'planet'}); return;
             case('/neptune')       : res.render('neptune', {layout: 'planet'}); return;
+            case('/searchbody')       : res.render('searchbody', {layout: 'search'}); return;
         }
     }
 })
@@ -83,7 +84,8 @@ app.post('/insert/entry', function (req,res) {
 })
 
 //Perform Queries on Mission Database
-app.post('/name', function(req, res) {      
+app.post('/name', function(req, res) {   
+    console.log(req.body.name) ;   
     query("SELECT * FROM Missions WHERE name = ?", req.body.name, res);
 });
 app.post('/number', function(req, res) {      

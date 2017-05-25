@@ -3,9 +3,6 @@ body {
     color: #f5f6f7;
 }
 
-/*#fadeText {
-  opacity: 0.0
-}*/
 
 /*all to do with colouring the navbar correctly*/
 .navbar {
@@ -144,6 +141,10 @@ make the background black. It looks funny on mobile if the sun is there*/
 .btn {
     background-color: #070915;
     color:#ffffff;
+}
+
+#moonButton {
+  margin-top: 10px;
 }
 
 #downScroll {

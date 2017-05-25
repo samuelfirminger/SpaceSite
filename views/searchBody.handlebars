@@ -1,0 +1,78 @@
+<!-- nav bar at the top of the page -->
+<nav id="navMenu"></nav>
+
+<div class="container-fluid bg-1" id="searchForm"> 
+
+    <div class="row" id="loginForm">
+
+        <div class="col-sm-6 col-sm-offset-3 form-box">
+
+            <h1>Search the missions database</h1>
+
+            <div class="form-top">
+                <div class="form-top-left"> 
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-lock"></i>
+                </div>
+            </div>
+
+            <div class="form-bottom">
+
+                <form role="form" action="/name" method="post" class="login-form">
+                    <div class="form-group">
+                        <label class="sr-only" for="form-missionname">missionname</label>
+                        <input type="text" name="name" placeholder="Mission Name.." class="form-missionname form-control" id="form-missionname">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="SearchButton">Search</button>
+                </form>
+
+                <form role="form" action="/number" method="post" class="login-form">
+                    <div class="form-group">
+                        <label class="sr-only" for="form-missionnum"></label>
+                        <input type="text" name="number" placeholder="Mission Number.." class="form-missionnum form-control" id="form-missionnum">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="SearchButton">Search</button>
+                </form>
+
+                <form role="form" action="/destination" method="post" class="login-form">
+                    <div class="form-group">
+                        <label class="sr-only" for="destination"></label>
+                        <input type="text" name="destination" placeholder="Destination.." class="form-destination form-control" id="form-destination">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="SearchButton">Search</button>
+                </form>
+
+                <form role="form" action="/launch" method="post" class="login-form">
+                    <div class="form-group">
+                        <label class="sr-only" for="form-launched"></label>
+                        <input type="text" name="year" placeholder="Year of Launch.." class="form-launched form-control" id="form-launched">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="SearchButton">Search</button>
+                </form>
+
+                <form role="form" action="/cost" method="post" class="login-form">
+                    <div class="form-group">
+                        <label class="sr-only" for="form-cost"></label>
+                        <input type="text" name="cost" placeholder="Cost.." class="form-cost form-control" id="form-cost">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="SearchButton">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- add javascript to bottom of the page so it loads faster-->
+<!--bootstrap uses jquery so need to load jquery script first--> 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<!-- the scroll function/scripts was obtained from here 
+https://startbootstrap.com/template-overviews/scrolling-nav/ -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+<!-- this is loading the navbar from the script file -->
+<script src="../js/navbar.js"></script>
