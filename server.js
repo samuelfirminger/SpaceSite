@@ -59,11 +59,11 @@ app.get('*', function (req,res) {
             case('/earth')       : res.render('earth', {layout: 'planet'}); return; 
             case('/moon')       : res.render('moon', {layout: 'planet'}); return; 
             case('/mars')       : res.render('mars', {layout: 'planet'}); return;
-            case('/jupiter')       : res.render('jupiter', {layout: 'planet'}); return;
+            case('/jupiter')      : res.render('jupiter', {layout: 'planet'}); return;
             case('/saturn')       : res.render('saturn', {layout: 'planet'}); return;
             case('/uranus')       : res.render('uranus', {layout: 'planet'}); return;
-            case('/neptune')       : res.render('neptune', {layout: 'planet'}); return;
-            case('/searchbody')       : res.render('searchbody', {layout: 'search'}); return;
+            case('/neptune')      : res.render('neptune', {layout: 'planet'}); return;
+            case('/searchbody')   : res.render('searchbody', {layout: 'search'}); return;
         }
     }
 })
@@ -122,7 +122,3 @@ function toTitleCase(str)
 {
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
-
-app.post('/name', function(req, res) {  
-    var searchName = req.body.name.toLowerCase();
-    query("SELECT * FROM Missions WHERE name = ?", searchName, res);
