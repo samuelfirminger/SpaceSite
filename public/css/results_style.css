@@ -89,3 +89,9 @@ table {
   padding: 0px;
   width: auto;
 }
+
+
+.btn {
+    background-color: #070915;
+    color:#ffffff;
+}

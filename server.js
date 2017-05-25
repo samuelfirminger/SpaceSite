@@ -80,7 +80,7 @@ app.post('/insert', function (req,res) {
     var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)')
     stmt.run(newName,newNum,newDest,newYear,newCost); 
     stmt.finalize();                
-    res.send("Added new entry");
+     res.render('searchbody', {layout: 'search'});
 })
 
 //Perform Queries on Mission Database
