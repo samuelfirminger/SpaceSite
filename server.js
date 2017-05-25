@@ -1,51 +1,31 @@
-//var sqlite3 = require('sqlite3').verbose();
-//var db = new sqlite3.Database(':memory:');
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var expressValidator = require('express-validator')
-var app = express();
-
-
-//database 
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('testDb.db');
+var express = require('express');
+var app = express();
 
-
-
+var path = require('path');
+var expressValidator = require('express-validator')
 var exphbs = require('express-handlebars');
 
+//Body parsing
+// parse application/x-www-form-urlencoded
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }))
 
-//Valid URLs: used for validation
-var validUrls = ["/home","/what","/where"];
+// parse application/json
+app.use(bodyParser.json())
 
 //Add directory for images
 app.use(express.static('public'));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '../public'));
 
-
-// handlebar
-app.set('views', path.join(__dirname, 'views')) ;
-app.use(bodyParser.urlencoded({ extended: false })) ;
-
-
-app.get('/', function(req, res){
-    res.render('index');
-})
-
-
-app.get('/mars', function(req, res) {
-    res.render('mars', {layout: 'planet'}) ;
-})
-
-// parse application/json
-app.use(bodyParser.json());
+//Set view engine: handlebars
+//app.set('view engine', 'pug');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.get('/main', function(req, res){
-    res.render('index');
-});
+//Valid URLs: used for validation
+var validUrls = ["/","/home","/what","/where","/simulation","/insert?","/mars"];
 
 var server = app.listen(8080, function() {
     var host = server.address().address;
@@ -59,129 +39,65 @@ app.get('*', function (req,res) {
     var urlValid = false;
     
     validUrls.forEach(function(entry) {
-        console.log("checking url=",url);
-        console.log("against=",entry);
         if(url === entry) {
-            console.log("RETURNING TRUE!");
             urlValid = true;
         }
     });
 
     if(urlValid == false) {
-        res.send("Page does not exist"); return;
+        res.status(404).send("404 - Page does not exist"); return;
     } else {
         switch(url) {
-            case('/')     : res.sendFile(__dirname + '/public/index.html'); return;
-            case('/home') : res.sendFile(__dirname + '/public/index.html'); return;
-            case('/what') : res.sendFile(__dirname + '/public/what.html');  return;
+            case('/')           : 
+            case('/home')       : res.render('index'); return;
+            case('/simulation') : res.sendFile(__dirname + '/public/animate.html'); return;
+            case('/what')       : res.sendFile(__dirname + '/public/what.html');    return;
+            case('/insert?')    : res.sendFile(__dirname + '/public/insert.html');  return;
+            case('/mars')       : res.render('mars', {layout: 'planet'}); return;
         }
     }
 })
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-    console.log("GET request for root");
+//================================Database Handling=======================================
+//Insert into the Mission Database
+app.post('/insert/entry', function (req,res) {
+    console.log("Attempting to add the following data:");
+    console.log("Name: ",req.body.name);
+    console.log("missionNum: ", req.body.missionNum);
+    console.log("Destination: ", req.body.destination);
+    console.log("Launched: ", req.body.launched);
+    console.log("Cost: ", req.body.cost);
+    var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)')
+    stmt.run(req.body.name,req.body.missionNum,req.body.destination,req.body.launched,req.body.cost); 
+    stmt.finalize();                
+    res.send("Added new entry");
 })
 
-app.get('/home', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-    console.log("GET request for home");
-    console.log("url=",req.url.toLowerCase());
-})
+//Perform Queries on Mission Database
+app.post('/search/name', function(req, res) {      
+    query("SELECT * FROM Missions WHERE name = ?", req.body.name, res);
+});
+app.post('/search/number', function(req, res) {      
+    query("SELECT * FROM Missions WHERE missionNum = ?", req.body.number, res);
+});
+app.post('/search/destination', function(req, res) {      
+    query("SELECT * FROM Missions WHERE destination = ?", req.body.destination, res);
+});
+app.post('/search/launch', function(req, res) {      
+    query("SELECT * FROM Missions WHERE launched = ?", req.body.year, res);
+});
+app.post('/search/cost', function(req, res) {      
+    query("SELECT * FROM Missions WHERE cost = ?", req.body.cost, res);
+});
 
-app.get('/what', function (req, res) {
-    res.sendFile(__dirname + '/public/what.html');
-    console.log("GET request for what");
-})
-
-app.get('/where', function (req, res) {
-    res.sendFile(__dirname + '/public/where.html');
-    console.log("GET request for where");
-})
-
-app.post('/', function (req, res) {
-    res.send('POST request to the homepage');
-})
-
-app.post('/what', function (req, res) {
-    res.send('POST request to what');
-})
-
-function checkUrl(req) {
-    var url = req.url.toLowerCase();
+function query(statement, searchTerm, res) {
+    var results = []; 
     
-    validUrls.forEach(function(entry) {
-        console.log("checking url=",url);
-        console.log("against=",entry);
-        if(url === entry) {
-            console.log("RETURNING TRUE!");
-            return true;
-        }
-    });
-    console.log("RETURNING FALSE!");
-    return false;
+    db.serialize(function () {      
+       db.each(statement, searchTerm, function(err, row) {
+           results.push({results: results, name: row.name, number: row.missionNum, destination: row.destination, launched: row.launched, cost: row.cost})
+       }, function() {
+        res.render('index',{"results": results});
+    })
+  });
 }
-
-
-/*function getPet(url, response) {
-    fs.readFile("./pet.html", ready);
-    function ready(err, content) {
-        getData(content, url, response);
-    }
-}
-
-function getData(text, url, response) {
-    
-}
-*/
-
-
-
-
-/*function initialiseDatabase() {
-    db.serialize(function () {
-        db.run('CREATE TABLE missions (id INT)')
-        var stmt = db.prepare('INSERT INTO missions VALUES (?)')
-
-        for (var i = 0; i < 10; i++) {
-          stmt.run(i);
-        }
-
-        stmt.finalize();
-
-    });  
-}
-
-function queryDatabase() {
-    db.serialize(function () {
-        db.each('SELECT id FROM missions', function (err, row) {
-            console.log(row.id);
-        });
-    });
-}*/
-
-/*app.get('/', function(req, res) {
-    console.log("Got a GET request for the homepage");
-    res.send('Hello World');
-})
-
-app.post('/', function(req,res) {
-    console.log("Got a POST request for the homepage");
-    res.send('Hello POST');
-})
-
-app.delete('/del_user', function(req,res) {
-    console.log("Got a DELETE request for /del_user");
-    res.send('Hello DELETE');
-})
-
-app.get('/list_user', function(req,res) {
-    console.log("Got a GET request for /list_user");
-    res.send('Page Listing');
-})
-
-//Responds to a GET request for abcd, abxcd, ab123cd, etc..
-app.get('/ab*cd', function(req, res) {
-    console.log("Got a GET request for /ab*cd");
-    res.send('Page Pattern Match');
-})*/
