@@ -38,31 +38,32 @@ var server = app.listen(8080, function() {
 app.get('*', function (req,res) {
     var url = req.url.toLowerCase();
     var urlValid = false;
-    //var data = [];
     
+    //Check the incoming url against the list of approved urls
     validUrls.forEach(function(entry) {
         if(url === entry) {
             urlValid = true;
         }
     });
 
+    //If URL is invalid, serve an error. Otherwise, render a page.
     if(urlValid == false) {
         res.status(404).send("404 - Page does not exist"); return;
     } else {
         switch(url) {
             case('/')           : 
-            case('/home')       : res.render('index'); return;
-            case('/simulation') : res.render('simulation', {layout: 'simulator'}); return;
+            case('/home')       : res.render('index')     ; return;
             case('/mercury')    : getStats('mercury', res); return;
-            case('/venus')      : getStats('venus', res); return;
-            case('/earth')      : getStats('earth', res); return;
-            case('/moon')       : getStats('moon', res); return;
-            case('/mars')       : getStats('mars', res); return;
+            case('/venus')      : getStats('venus', res)  ; return;
+            case('/earth')      : getStats('earth', res)  ; return;
+            case('/moon')       : getStats('moon', res)   ; return;
+            case('/mars')       : getStats('mars', res)   ; return;
             case('/jupiter')    : getStats('jupiter', res); return;
-            case('/saturn')     : getStats('saturn', res); return;
-            case('/uranus')     : getStats('uranus', res); return;
+            case('/saturn')     : getStats('saturn', res) ; return;
+            case('/uranus')     : getStats('uranus', res) ; return;
             case('/neptune')    : getStats('neptune', res); return;
-            case('/searchbody') : res.render('searchbody', {layout: 'search'}); return;
+            case('/simulation') : res.render('simulation', {layout: 'simulator'}); return;
+            case('/searchbody') : res.render('searchbody', {layout: 'search'})   ; return;
         }
     }
 })
@@ -74,12 +75,17 @@ app.post('/insert', function (req,res) {
     var newNum  = req.body.number.toLowerCase(); 
     var newDest = req.body.destination.toLowerCase();
     var newYear = req.body.year.toLowerCase();  
-    var newCost = req.body.cost.toLowerCase();
+    var newCost = req.body.cost.toLowerCase();   
+    var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)');
     
-    var stmt = db.prepare('INSERT INTO Missions VALUES (?,?,?,?,?)')
-    stmt.run(newName,newNum,newDest,newYear,newCost); 
-    stmt.finalize();            
-    res.render('searchbody', {layout: 'search'});
+    if((newName === "") || (newNum === "") || (newDest === "") || (newYear === "") || (newCost === "")) {
+        res.sendFile(__dirname + '/public/error.html'); 
+    } else {
+        stmt.run(newName,newNum,newDest,newYear,newCost); 
+        stmt.finalize();            
+        res.render('searchbody', {layout: 'search'});       
+    }
+    
 })
 
 //Perform Queries on Mission Database
@@ -103,12 +109,28 @@ app.post('/cost', function(req, res) {
     var searchCost = req.body.cost.toLowerCase();
     query("SELECT * FROM Missions WHERE cost = ?", searchCost, res);
 });
+app.post('/all', function(req, res) {
+    var data = [];
+    db.serialize(function () {      
+           db.each("SELECT * FROM Missions", function(err, row) {
+               data.push({name: toTitleCase(row.name), number: row.missionNum, destination: toTitleCase(row.destination), launched: row.launched, cost: row.cost})
+           }, function() {
+            res.render('result', {layout: 'results', data: data});
+        })
+    })
+});
 
 function getStats(planet, res) {
     var data = [];
     db.serialize(function () {
         db.each("SELECT * FROM Stats WHERE planet = ?", planet, function(err, row) {
-        data.push({radius: row.radius, distance: row.distance, gravity: row.gravity, moons: row.moons})
+        data.push({radius: row.radius,
+                   distance: row.distance,
+                   gravity: row.gravity,
+                   moons: row.moons,
+                   maxTemp: row.maxTemp,
+                   minTemp: row.minTemp,
+                   surfacePressure: row.surfacePressure})
         }, function() {
             res.render(planet, {layout: 'planet', data : data});
         }) 
@@ -117,11 +139,14 @@ function getStats(planet, res) {
 
 function query(statement, searchTerm, res) {
     var data = []; 
-    var returnName, returnNumber, returnDestination, returnLaunch, returnCost;
     
     db.serialize(function () {      
        db.each(statement, searchTerm, function(err, row) {
-           data.push({name: toTitleCase(row.name), number: row.missionNum, destination: toTitleCase(row.destination), launched: row.launched, cost: row.cost})
+           data.push({name: toTitleCase(row.name), 
+                      number: row.missionNum, 
+                      destination: toTitleCase(row.destination), 
+                      launched: row.launched, 
+                      cost: row.cost})
        }, function() {
         res.render('result', {layout: 'results', data: data});
     })

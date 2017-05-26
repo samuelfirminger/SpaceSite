@@ -17,6 +17,9 @@ CREATE TABLE IF NOT EXISTS Stats (
  distance DOUBLE,
  gravity DOUBLE,
  moons INT,
+ maxTemp INT,
+ minTemp INT,
+ surfacePressure DOUBLE,
  
  PRIMARY KEY(planet)
 );
@@ -76,7 +79,6 @@ INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("pion
 INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("pioneer", 10, "jupiter", 1972, 150);
 INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("pioneer", 11, "saturn", 1973, 150);
 
-
 -- Ranger 
 INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("ranger", 1, "moon", 1973, 170);
 
@@ -109,7 +111,6 @@ INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("juno
 -- New Horizons
 INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("Horizons", 1, "pluto", 2006, 700);
 
-
 -- Deep Space 
 INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("deep space", 1, "asteroid", 1998, 95);
 
@@ -122,17 +123,22 @@ INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("rose
 -- Genesis 
 INSERT INTO Missions(name, missionNum, destination, launched, cost) VALUES("genesis", 1, "sun", 2001, 164);
 
-
-
-
-
-
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("mercury",2440 ,0.39 ,0.38,0);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("venus"  ,6052 ,0.72 ,0.90,0);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("earth"  ,6378 ,1.00 ,1.00,1);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("moon"   ,1738 ,0.00 ,0.17,0);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("mars"   ,3397 ,1.52 ,0.38,2);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("jupiter",71492,5.20 ,2.53,67);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("saturn" ,60268,9.54 ,1.10,62);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("uranus" ,25559,19.18,0.89,27);
-INSERT INTO Stats(planet, radius, distance, gravity, moons) VALUES("neptune",24766,30.06,1.14,13);
+-- Planet Stats
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("mercury",2440  ,0.39    ,0.38   ,0    ,700    ,380    ,0);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("venus"  ,6052  ,0.72    ,0.90   ,0    ,737    ,737    ,92);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("earth"  ,6378  ,1.00    ,1.00   ,1    ,330    ,184    ,1);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("moon"   ,1738  ,0.00    ,0.17   ,0    ,390    ,100    ,0);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("mars"   ,3397  ,1.52    ,0.38   ,2    ,308    ,130    ,0.006);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("jupiter",71492 ,5.20    ,2.53   ,67   ,165    ,112    ,1);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("saturn" ,60268 ,9.54    ,1.10   ,62   ,134    ,84     ,1);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("uranus" ,25559 ,19.18   ,0.89   ,27   ,46     ,57     ,1);
+INSERT INTO Stats(planet   ,radius,distance,gravity,moons,maxTemp,minTemp,surfacePressure) 
+           VALUES("neptune",24766 ,30.06   ,1.14   ,13   ,72     ,55     ,1);
