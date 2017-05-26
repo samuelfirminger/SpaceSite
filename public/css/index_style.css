@@ -54,6 +54,12 @@ body {
   width: auto;
 }
 
+
+#footer {
+  padding-top: 0px ;
+  padding-bottom: 0px ; 
+}
+
 /*this is the background for the title*/
 .bg-1 { 
     background-image: url("../images/sunrise.jpg");
